@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.library") version "8.9.2"
+    id("com.android.library")
     id("maven-publish")
 }
 
@@ -59,7 +59,7 @@ afterEvaluate {
 
                 groupId = "com.github.YuvalG22"
                 artifactId = "videoadslibrary"
-                version = "1.7"
+                version = "2.2"
             }
         }
     }
