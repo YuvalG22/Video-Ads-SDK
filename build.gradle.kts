@@ -62,7 +62,7 @@ afterEvaluate {
 
                 groupId = "com.github.YuvalG22"
                 artifactId = "videoadslibrary"
-                version = "1.0"
+                version = "1.1"
             }
         }
     }
