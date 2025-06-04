@@ -29,7 +29,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.repo)
     implementation(libs.retrofit)
     implementation (libs.squareup.converter.gson)
     implementation (libs.androidx.media3.exoplayer)
