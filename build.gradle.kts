@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath ("com.android.tools.build:gradle:8.10.1")
+    }
+}
+
 plugins {
     id("com.android.library")
     id("maven-publish")
