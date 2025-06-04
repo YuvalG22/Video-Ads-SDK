@@ -1,5 +1,6 @@
 plugins {
-    id ("com.android.library")
+    alias(libs.plugins.android.library)
+    id("maven-publish")
 }
 
 android {
@@ -22,18 +23,27 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
+
     implementation(libs.retrofit)
-    implementation (libs.squareup.converter.gson)
-    implementation (libs.androidx.media3.exoplayer)
-    implementation (libs.androidx.media3.ui)
-    implementation (libs.androidx.media3.common)
+    implementation(libs.squareup.converter.gson)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
+    implementation(libs.androidx.media3.common)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -41,4 +51,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+// Configure publishing for JitPack
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+
+                groupId = "com.github.YuvalG22"
+                artifactId = "videoadslibrary"
+                version = "1.0"
+            }
+        }
+    }
 }
