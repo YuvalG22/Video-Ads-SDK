@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
@@ -64,7 +64,7 @@ afterEvaluate {
 
                         groupId = 'com.github.YuvalG22'
                 artifactId = 'videoadslibrary'
-                version = '2.7'
+                version = '2.8'
             }
         }
     }
