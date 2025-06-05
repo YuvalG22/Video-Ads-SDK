@@ -3,10 +3,16 @@ buildscript {
         google()
         mavenCentral()
     }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+    }
 }
 
-    apply plugin: 'com.android.library'
-    apply plugin: 'maven-publish'
+    plugins {
+        id 'com.android.library'
+        id 'maven-publish'
+    }
 
 android {
     namespace 'com.example.videoadslibrary'
